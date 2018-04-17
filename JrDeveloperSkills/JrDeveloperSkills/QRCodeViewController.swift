@@ -7,13 +7,31 @@
 //
 
 import UIKit
+import AVFoundation
 
-class QRCodeViewController: UIViewController {
+class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+    var stringURL = String()
+    
+    enum scanError : Error {
+        case noCameraAvailable
+        case videoInputInitFail
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        do{
+            try scanQRCode()
+        }catch{
+            if let error = error as? scanError{
+                switch error{
+                case .noCameraAvailable:
+                    print("No Camera.")
+                case .videoInputInitFail:
+                    print("Input init fail.")
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +39,58 @@ class QRCodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        guard  let readableCode = metadataObjects.first as? AVMetadataMachineReadableCodeObject else {
+            print("No readable code.")
+            return
+        }
+        if readableCode.type == AVMetadataObject.ObjectType.qr{
+            guard let stringValue = readableCode.stringValue else{
+                assertionFailure("Should not fail !")
+                return
+            }
+            //Get QRCode link.
+            stringURL = stringValue
+            performSegue(withIdentifier: "openLink", sender: self)
+        }
+    }
+    
+    func scanQRCode() throws {
+        //Create AVCaptureSession.
+        let avCaptureSession = AVCaptureSession()
+        
+        //Check input & output.
+        guard let avCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
+            throw scanError.noCameraAvailable
+        }
+        guard let avCaptureInput = try? AVCaptureDeviceInput(device: avCaptureDevice) else {
+            throw scanError.videoInputInitFail
+        }
+        let avCaptureOutput = AVCaptureMetadataOutput()
+        avCaptureOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+        
+        //Add input & output into acCaptureSession
+        avCaptureSession.addInput(avCaptureInput)
+        avCaptureSession.addOutput(avCaptureOutput)
+        //Set output metadata object type.
+        avCaptureOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+        
+        //
+        let avCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: avCaptureSession)
+        avCaptureVideoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        avCaptureVideoPreviewLayer.frame = self.view.bounds
+        self.view.layer.addSublayer(avCaptureVideoPreviewLayer)
+        avCaptureSession.startRunning()
+    }
+    
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showLink"{
+            
+        }
     }
-    */
 
 }

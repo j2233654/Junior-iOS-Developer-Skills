@@ -63,20 +63,38 @@
             </objects>
             <point key="canvasLocation" x="972" y="31.934032983508249"/>
         </scene>
-        <!--View Controller-->
+        <!--Code View Controller-->
         <scene sceneID="ySx-kz-Tmg">
             <objects>
-                <viewController id="x6W-Tx-5nK" sceneMemberID="viewController">
+                <viewController id="x6W-Tx-5nK" customClass="QRCodeViewController" customModule="JrDeveloperSkills" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q5m-iC-yNS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Rjl-I8-4q2"/>
                     </view>
+                    <connections>
+                        <segue destination="vLE-a4-qZ1" kind="show" identifier="openLink" id="qeN-mJ-dPl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUc-rB-Tsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1789" y="-641"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jii-n4-hLa">
+            <objects>
+                <viewController id="vLE-a4-qZ1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gRu-LU-2xD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xrd-yI-N3c"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GGU-eI-cR2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2694" y="-642"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CPE-6p-rhn">
