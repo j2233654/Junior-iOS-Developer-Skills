@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
+    
     //Create AVCaptureSession.
     let avCaptureSession = AVCaptureSession()
     
@@ -20,6 +20,8 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         case noCameraAvailable
         case videoInputInitFail
     }
+    
+    @IBOutlet weak var resultLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +89,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         avCaptureVideoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         avCaptureVideoPreviewLayer.frame = self.view.bounds
         self.view.layer.addSublayer(avCaptureVideoPreviewLayer)
+        self.view.bringSubview(toFront: resultLabel)
         avCaptureSession.startRunning()
     }
     
@@ -100,6 +103,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                 assertionFailure("Should not fail.")
                 return
             }
+            //TODO: Checking URL usability here.
             webVC.stringURL = self.stringURL
         }
     }
