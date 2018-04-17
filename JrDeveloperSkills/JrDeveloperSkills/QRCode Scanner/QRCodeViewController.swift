@@ -11,6 +11,9 @@ import AVFoundation
 
 class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
+    //Create AVCaptureSession.
+    let avCaptureSession = AVCaptureSession()
+    
     var stringURL = String()
     
     enum scanError : Error {
@@ -33,6 +36,11 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        avCaptureSession.startRunning()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -45,6 +53,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             return
         }
         if readableCode.type == AVMetadataObject.ObjectType.qr{
+            avCaptureSession.stopRunning()
             guard let stringValue = readableCode.stringValue else{
                 assertionFailure("Should not fail !")
                 return
@@ -56,8 +65,6 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     }
     
     func scanQRCode() throws {
-        //Create AVCaptureSession.
-        let avCaptureSession = AVCaptureSession()
         
         //Check input & output.
         guard let avCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
@@ -88,8 +95,12 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showLink"{
-            
+        if segue.identifier == "openLink"{
+            guard let webVC = segue.destination as? WebViewController else{
+                assertionFailure("Should not fail.")
+                return
+            }
+            webVC.stringURL = self.stringURL
         }
     }
 
