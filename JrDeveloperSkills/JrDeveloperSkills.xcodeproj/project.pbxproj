@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F11218F220860E8C00A2F18E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F120860E8C00A2F18E /* ListViewController.swift */; };
+		F11218F42086154C00A2F18E /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F32086154C00A2F18E /* QRCodeViewController.swift */; };
 		F146ECA72085D133002A7EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146ECA62085D133002A7EAC /* AppDelegate.swift */; };
 		F146ECAC2085D133002A7EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F146ECAA2085D133002A7EAC /* Main.storyboard */; };
 		F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F146ECAD2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		F11218F120860E8C00A2F18E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		F11218F32086154C00A2F18E /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		F146ECA32085D133002A7EAC /* JrDeveloperSkills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JrDeveloperSkills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F146ECA62085D133002A7EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F146ECAB2085D133002A7EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				F146ECA62085D133002A7EAC /* AppDelegate.swift */,
 				F11218F120860E8C00A2F18E /* ListViewController.swift */,
+				F11218F32086154C00A2F18E /* QRCodeViewController.swift */,
 				F146ECAA2085D133002A7EAC /* Main.storyboard */,
 				F146ECB02085D133002A7EAC /* Assets.xcassets */,
 				F146ECB22085D133002A7EAC /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */,
 				F146ECA72085D133002A7EAC /* AppDelegate.swift in Sources */,
+				F11218F42086154C00A2F18E /* QRCodeViewController.swift in Sources */,
 				F11218F220860E8C00A2F18E /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
