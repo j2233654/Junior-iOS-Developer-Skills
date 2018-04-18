@@ -72,28 +72,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR Code is detected" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g34-Dg-YqP">
-                                <rect key="frame" x="95.5" y="323.5" width="185" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR Code is detected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g34-Dg-YqP">
+                                <rect key="frame" x="20" y="323.5" width="335" height="20.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccj-RB-XHm">
+                                <rect key="frame" x="158" y="404" width="59" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="connectBtnPressed:" destination="x6W-Tx-5nK" eventType="touchUpInside" id="DHU-NJ-Ph1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="g34-Dg-YqP" firstAttribute="centerX" secondItem="Q5m-iC-yNS" secondAttribute="centerX" id="eSJ-l2-FN1"/>
-                            <constraint firstItem="g34-Dg-YqP" firstAttribute="centerY" secondItem="Q5m-iC-yNS" secondAttribute="centerY" id="hA1-Xg-mtX"/>
+                            <constraint firstItem="Ccj-RB-XHm" firstAttribute="top" secondItem="g34-Dg-YqP" secondAttribute="bottom" constant="60" id="Jx4-xB-Rkp"/>
+                            <constraint firstItem="Ccj-RB-XHm" firstAttribute="centerX" secondItem="Q5m-iC-yNS" secondAttribute="centerX" id="MJ5-Eb-U6B"/>
+                            <constraint firstItem="g34-Dg-YqP" firstAttribute="centerY" secondItem="Q5m-iC-yNS" secondAttribute="centerY" id="hlE-K6-5Fe"/>
+                            <constraint firstItem="g34-Dg-YqP" firstAttribute="leading" secondItem="Rjl-I8-4q2" secondAttribute="leading" constant="20" id="lmS-NL-Izo"/>
+                            <constraint firstItem="Rjl-I8-4q2" firstAttribute="trailing" secondItem="g34-Dg-YqP" secondAttribute="trailing" constant="20" id="uQn-Tr-EJo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rjl-I8-4q2"/>
                     </view>
                     <connections>
+                        <outlet property="connect" destination="Ccj-RB-XHm" id="Di0-lU-onT"/>
                         <outlet property="resultLabel" destination="g34-Dg-YqP" id="Ku8-Ce-AfM"/>
-                        <segue destination="vLE-a4-qZ1" kind="show" identifier="openLink" id="qeN-mJ-dPl"/>
+                        <segue destination="vLE-a4-qZ1" kind="show" identifier="connect" id="qeN-mJ-dPl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUc-rB-Tsf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="-641"/>
+            <point key="canvasLocation" x="1788" y="-641.82908545727139"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="jii-n4-hLa">
