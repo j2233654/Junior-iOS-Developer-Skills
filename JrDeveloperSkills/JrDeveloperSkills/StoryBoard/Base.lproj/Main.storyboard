@@ -39,9 +39,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="x6W-Tx-5nK" kind="show" identifier="showQRCode" id="fci-I8-4F7"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -58,6 +55,7 @@
                     <navigationItem key="navigationItem" id="Ocq-Z8-Njx"/>
                     <connections>
                         <outlet property="tableView" destination="X3g-LI-FrU" id="YLg-e9-0zJ"/>
+                        <segue destination="x6W-Tx-5nK" kind="show" identifier="qrCode" id="qIT-VL-zI4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -51,5 +51,21 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return view.frame.height * 0.1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0{
+            if indexPath.row == 0{
+                performSegue(withIdentifier: "qrCode", sender: self)
+            }
+            if indexPath.row == 2{
+                let storyboard = UIStoryboard(name: "PushNotification", bundle: nil)
+                if let notifyVC = storyboard.instantiateViewController(withIdentifier: "notify") as? NotifyViewController{
+                    self.show(notifyVC, sender: self)
+                }
+            }
+        }
+
+    }
+    
 }
 

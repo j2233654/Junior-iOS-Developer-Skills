@@ -10,6 +10,8 @@
 		F11218F220860E8C00A2F18E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F120860E8C00A2F18E /* ListViewController.swift */; };
 		F11218F42086154C00A2F18E /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F32086154C00A2F18E /* QRCodeViewController.swift */; };
 		F11218F72086255100A2F18E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F62086255100A2F18E /* WebViewController.swift */; };
+		F11218FA20873F0900A2F18E /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F920873F0900A2F18E /* NotifyViewController.swift */; };
+		F11218FC208740F800A2F18E /* PushNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11218FB208740F800A2F18E /* PushNotification.storyboard */; };
 		F146ECA72085D133002A7EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146ECA62085D133002A7EAC /* AppDelegate.swift */; };
 		F146ECAC2085D133002A7EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F146ECAA2085D133002A7EAC /* Main.storyboard */; };
 		F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F146ECAD2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld */; };
@@ -21,6 +23,8 @@
 		F11218F120860E8C00A2F18E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		F11218F32086154C00A2F18E /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		F11218F62086255100A2F18E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		F11218F920873F0900A2F18E /* NotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
+		F11218FB208740F800A2F18E /* PushNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PushNotification.storyboard; sourceTree = "<group>"; };
 		F146ECA32085D133002A7EAC /* JrDeveloperSkills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JrDeveloperSkills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F146ECA62085D133002A7EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F146ECAB2085D133002A7EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +54,23 @@
 			path = "QRCode Scanner";
 			sourceTree = "<group>";
 		};
+		F11218F820873ED700A2F18E /* Push Notification */ = {
+			isa = PBXGroup;
+			children = (
+				F11218F920873F0900A2F18E /* NotifyViewController.swift */,
+			);
+			path = "Push Notification";
+			sourceTree = "<group>";
+		};
+		F11218FD2087437900A2F18E /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				F146ECAA2085D133002A7EAC /* Main.storyboard */,
+				F11218FB208740F800A2F18E /* PushNotification.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
 		F146EC9A2085D133002A7EAC = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +93,8 @@
 				F146ECA62085D133002A7EAC /* AppDelegate.swift */,
 				F11218F120860E8C00A2F18E /* ListViewController.swift */,
 				F11218F52086252700A2F18E /* QRCode Scanner */,
-				F146ECAA2085D133002A7EAC /* Main.storyboard */,
+				F11218F820873ED700A2F18E /* Push Notification */,
+				F11218FD2087437900A2F18E /* StoryBoard */,
 				F146ECB02085D133002A7EAC /* Assets.xcassets */,
 				F146ECB22085D133002A7EAC /* LaunchScreen.storyboard */,
 				F146ECB52085D133002A7EAC /* Info.plist */,
@@ -140,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F146ECB42085D133002A7EAC /* LaunchScreen.storyboard in Resources */,
+				F11218FC208740F800A2F18E /* PushNotification.storyboard in Resources */,
 				F146ECB12085D133002A7EAC /* Assets.xcassets in Resources */,
 				F146ECAC2085D133002A7EAC /* Main.storyboard in Resources */,
 			);
@@ -153,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */,
+				F11218FA20873F0900A2F18E /* NotifyViewController.swift in Sources */,
 				F146ECA72085D133002A7EAC /* AppDelegate.swift in Sources */,
 				F11218F42086154C00A2F18E /* QRCodeViewController.swift in Sources */,
 				F11218F72086255100A2F18E /* WebViewController.swift in Sources */,
