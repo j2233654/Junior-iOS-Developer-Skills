@@ -16,7 +16,6 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var avCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer()
     
     var url = URL(string: " ")
-    
     enum scanError : Error {
         case noCameraAvailable
         case videoInputInitFail
@@ -28,7 +27,6 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         //Start to scan.
         do{
             try scanQRCode()
@@ -44,7 +42,6 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         }
         
         setupQRCodeFrameView()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +54,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         // Dispose of any resources that can be recreated.
     }
     
+    //Connect the URL scanned.
     @IBAction func connectBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "connect", sender: self)
         avCaptureSession.stopRunning()
@@ -65,6 +63,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         resultLabel.text = "No QR Code is detected"
     }
     
+    //Bound the QRCode selected with green rectangle.
     func setupQRCodeFrameView(){
         qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
         qrCodeFrameView.layer.borderWidth = 2
@@ -74,6 +73,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         self.view.bringSubview(toFront: connect)
     }
     
+    //MetadataObjectsDelegate
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         guard  let readableCode = metadataObjects.first as? AVMetadataMachineReadableCodeObject else {
             connect.isHidden = true
@@ -97,16 +97,16 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
                     connect.isHidden = true
                     return
                 }
-                //Get usable URL
-                connect.isHidden = false
+                //Show URL on the screen.
                 resultLabel.text = stringValue
+                connect.isHidden = false
                 self.url = url
             }
         }
     }
     
     func scanQRCode() throws {
-        //Check input & output.
+        //Check & set input & output.
         guard let avCaptureDevice = AVCaptureDevice.default(for: AVMediaType.video) else {
             throw scanError.noCameraAvailable
         }
@@ -122,7 +122,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         //Set output metadata object type.
         avCaptureOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
         
-        //Put scanner onto UIView
+        //Put scanner onto screen
         avCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: avCaptureSession)
         avCaptureVideoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         avCaptureVideoPreviewLayer.frame = self.view.bounds

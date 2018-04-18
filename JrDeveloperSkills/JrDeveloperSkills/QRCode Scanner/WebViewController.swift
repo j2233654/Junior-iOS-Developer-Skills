@@ -28,6 +28,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //UIWebViewDelegate
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         failedLabel.isHidden = false
     }
