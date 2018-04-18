@@ -8,14 +8,17 @@
 
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webView : UIWebView!
+    @IBOutlet weak var failedLabel: UILabel!
+    
     
     var url : URL!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.delegate = self
         webView.loadRequest(URLRequest(url: url))
         // Do any additional setup after loading the view.
     }
@@ -23,6 +26,10 @@ class WebViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        failedLabel.isHidden = false
     }
     
 
