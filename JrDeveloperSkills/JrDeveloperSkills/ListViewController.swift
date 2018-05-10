@@ -10,9 +10,9 @@ import UIKit
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    let sectionTitles = ["Local Functions", "EWxternal Functions"]
-    let rowTitles = [ ["QRCode/BarCode Scanner","Multilingual","Push Notification"],
-                            ["Parse JSON/XML"] ]
+    let sectionTitles = ["Local Functions", "External Functions"]
+    let rowTitles = [ ["QRCode/BarCode Scanner","Multilingual","Push Notification","BLE", "AV Foundation"],
+                            ["Parse JSON/XML", "Google Drive / Login", "Google Sheet"] ]
     
     @IBOutlet weak var tableView : UITableView!
 
