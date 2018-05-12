@@ -6,23 +6,36 @@
 //  Copyright © 2018年 Jimmy. All rights reserved.
 //
 
+import GoogleAPIClientForREST
+import GoogleSignIn
 import UIKit
 
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let sectionTitles = ["Local Functions", "External Functions"]
     let rowTitles = [ ["QRCode/BarCode Scanner","Multilingual","Push Notification","BLE", "AV Foundation"],
-                            ["Parse JSON/XML", "Google Drive / Login", "Google Sheet"] ]
+                            ["Parse JSON/XML", "Google Drive", "Google Sheet"] ]
+    let signInBtn = GIDSignInButton()
+    
     
     @IBOutlet weak var tableView : UITableView!
+    @IBOutlet weak var signInView : UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "🛠 Junior Skills"
+        setUpSignInBtn()
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
+    func setUpSignInBtn(){
+        signInView.layer.cornerRadius = 5
+        signInBtn.style = .wide
+        signInView.addSubview(signInBtn)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

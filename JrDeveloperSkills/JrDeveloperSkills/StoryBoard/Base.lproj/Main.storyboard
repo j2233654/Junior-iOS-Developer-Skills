@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-LI-FrU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="e7Y-rm-mHr" style="IBUITableViewCellStyleDefault" id="BRp-Fl-Sz3">
@@ -42,18 +42,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0s-bP-8iS">
+                                <rect key="frame" x="31.5" y="74" width="312" height="48"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5Ho-wP-5PE"/>
+                                    <constraint firstAttribute="width" constant="312" id="wIb-Ic-Wbr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X3g-LI-FrU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3O7-ef-eog"/>
-                            <constraint firstItem="X3g-LI-FrU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V5w-Nt-GkX"/>
+                            <constraint firstItem="N0s-bP-8iS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="84Q-7B-jlk"/>
+                            <constraint firstItem="X3g-LI-FrU" firstAttribute="top" secondItem="N0s-bP-8iS" secondAttribute="bottom" constant="10" id="V5w-Nt-GkX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X3g-LI-FrU" secondAttribute="trailing" id="WNl-SK-muW"/>
+                            <constraint firstItem="N0s-bP-8iS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dyJ-46-7MZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X3g-LI-FrU" secondAttribute="bottom" id="yZe-qv-M3A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ocq-Z8-Njx"/>
                     <connections>
+                        <outlet property="signInView" destination="N0s-bP-8iS" id="Jgx-rE-9Vk"/>
                         <outlet property="tableView" destination="X3g-LI-FrU" id="YLg-e9-0zJ"/>
                         <segue destination="x6W-Tx-5nK" kind="show" identifier="qrCode" id="qIT-VL-zI4"/>
                     </connections>
