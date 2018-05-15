@@ -17,6 +17,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let rowTitles = [ ["QRCode / BarCode Scanner","Multilingual","Push Notification","BLE", "AV Foundation"],
                             ["Parse JSON/XML", "Google Drive", "Google Sheet"] ]
 
+    private let scopes = [kGTLRAuthScopeSheetsSpreadsheetsReadonly]
     private let service = GTLRSheetsService()
     
     @IBOutlet weak var tableView : UITableView!
@@ -24,6 +25,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var userImageView : UIImageView!
     @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var logOutBtn : UIButton!
+    @IBOutlet weak var testLabel : UILabel!
 
     //MARK: - Settings and Btn.
     override func viewDidLoad() {
@@ -43,6 +45,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // Configure Google Sign-in.
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().scopes = scopes
         userImageView.layer.cornerRadius = userImageView.frame.width/2
         signInBtn.style = .wide
         if GIDSignIn.sharedInstance().hasAuthInKeychain(){
@@ -131,6 +134,37 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             logOutBtn.isHidden = false
         //Get service authorizer.
             self.service.authorizer = user.authentication.fetcherAuthorizer()
+            listMajors()
+        }
+    }
+    
+//MARK: - Testing Code for query Google Sheet
+    func listMajors() {
+        let spreadsheetId = "1nIiw4D7CTxb_sKjYqssrk6GLP4-s_DEeVXqPhi6N7mM"
+    //Query the first colume.
+        let range = "A1:Z1"
+        let query = GTLRSheetsQuery_SpreadsheetsValuesGet.query(withSpreadsheetId: spreadsheetId, range: range)
+        service.executeQuery(query) { (ticket, result, error) in
+            if let error = error {
+                self.showAlert(title: "Error", message: error.localizedDescription)
+                return
+            }
+            guard let result = result as? GTLRSheets_ValueRange else{
+                return
+            }
+        //Query the first colume.
+            let row = result.values!.first!
+            var majorsString = ""
+//            if rows.isEmpty {
+//                self.testLabel.text = "No data found."
+//                return
+//            }
+            for i in 0..<row.count {
+//                let name = row[0]
+//                let major = row[4]
+                majorsString += "\(row[i]), "
+            }
+            self.testLabel.text = majorsString
         }
     }
     
