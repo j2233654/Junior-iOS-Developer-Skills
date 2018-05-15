@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-LI-FrU">
-                                <rect key="frame" x="0.0" y="132" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="e7Y-rm-mHr" style="IBUITableViewCellStyleDefault" id="BRp-Fl-Sz3">
@@ -42,30 +43,62 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0s-bP-8iS">
-                                <rect key="frame" x="31.5" y="74" width="312" height="48"/>
-                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0s-bP-8iS" customClass="GIDSignInButton">
+                                <rect key="frame" x="87.5" y="74" width="200" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="5Ho-wP-5PE"/>
-                                    <constraint firstAttribute="width" constant="312" id="wIb-Ic-Wbr"/>
+                                    <constraint firstAttribute="height" constant="44" id="BJf-yE-XQq"/>
+                                    <constraint firstAttribute="width" constant="200" id="tFS-m4-ZTj"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lu1-Ww-0dc">
+                                <rect key="frame" x="205" y="81" width="154" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutBtnPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUA-Db-Dhe"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iX8-6v-0UU">
+                                <rect key="frame" x="16" y="74" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="exz-76-H8A"/>
+                                    <constraint firstAttribute="height" constant="44" id="pYW-Sv-61j"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6AN-kr-pUW">
+                                <rect key="frame" x="76" y="85.5" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X3g-LI-FrU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3O7-ef-eog"/>
                             <constraint firstItem="N0s-bP-8iS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="84Q-7B-jlk"/>
+                            <constraint firstAttribute="trailing" secondItem="Lu1-Ww-0dc" secondAttribute="trailing" constant="16" id="9w7-nr-jb2"/>
                             <constraint firstItem="X3g-LI-FrU" firstAttribute="top" secondItem="N0s-bP-8iS" secondAttribute="bottom" constant="10" id="V5w-Nt-GkX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X3g-LI-FrU" secondAttribute="trailing" id="WNl-SK-muW"/>
+                            <constraint firstItem="6AN-kr-pUW" firstAttribute="centerY" secondItem="N0s-bP-8iS" secondAttribute="centerY" id="ZWq-Dr-Y2R"/>
+                            <constraint firstItem="Lu1-Ww-0dc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.5" id="bOi-hO-Flh"/>
                             <constraint firstItem="N0s-bP-8iS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dyJ-46-7MZ"/>
+                            <constraint firstItem="Lu1-Ww-0dc" firstAttribute="centerY" secondItem="N0s-bP-8iS" secondAttribute="centerY" id="i5Z-Nw-Q93"/>
+                            <constraint firstItem="Lu1-Ww-0dc" firstAttribute="leading" secondItem="6AN-kr-pUW" secondAttribute="trailing" constant="16" id="ltv-rM-Xhy"/>
+                            <constraint firstItem="6AN-kr-pUW" firstAttribute="leading" secondItem="iX8-6v-0UU" secondAttribute="trailing" constant="16" id="s29-8f-IeD"/>
+                            <constraint firstItem="iX8-6v-0UU" firstAttribute="centerY" secondItem="N0s-bP-8iS" secondAttribute="centerY" id="sv1-zj-Y8q"/>
+                            <constraint firstItem="iX8-6v-0UU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xDA-tv-ez9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X3g-LI-FrU" secondAttribute="bottom" id="yZe-qv-M3A"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ocq-Z8-Njx"/>
                     <connections>
-                        <outlet property="signInView" destination="N0s-bP-8iS" id="Jgx-rE-9Vk"/>
+                        <outlet property="logOutBtn" destination="Lu1-Ww-0dc" id="oWo-UJ-kHa"/>
+                        <outlet property="nameLabel" destination="6AN-kr-pUW" id="a6v-6L-N82"/>
+                        <outlet property="signInBtn" destination="N0s-bP-8iS" id="U40-s7-Ztb"/>
                         <outlet property="tableView" destination="X3g-LI-FrU" id="YLg-e9-0zJ"/>
+                        <outlet property="userImageView" destination="iX8-6v-0UU" id="cKm-5B-k6r"/>
                         <segue destination="x6W-Tx-5nK" kind="show" identifier="qrCode" id="qIT-VL-zI4"/>
                     </connections>
                 </viewController>
