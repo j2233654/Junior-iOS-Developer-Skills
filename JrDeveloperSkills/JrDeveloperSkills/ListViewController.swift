@@ -17,7 +17,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let rowTitles = [ ["QRCode / BarCode Scanner","Multilingual","Push Notification","BLE", "AV Foundation"],
                             ["Parse JSON/XML", "Google Drive", "Google Sheet"] ]
 
-    private let scopes = [kGTLRAuthScopeSheetsSpreadsheetsReadonly]
+    private let scopes = [kGTLRAuthScopeSheetsSpreadsheetsReadonly, kGTLRAuthScopeDriveReadonly]
     private let service = GTLRSheetsService()
     
     @IBOutlet weak var tableView : UITableView!
@@ -105,13 +105,24 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0{
+        //QRCode / BarCode Scanner.
             if indexPath.row == 0{
                 performSegue(withIdentifier: "qrCode", sender: self)
             }
+        //Push Notification.
             if indexPath.row == 2{
                 let storyboard = UIStoryboard(name: "PushNotification", bundle: nil)
                 if let notifyVC = storyboard.instantiateViewController(withIdentifier: "notify") as? NotifyViewController{
                     self.show(notifyVC, sender: self)
+                }
+            }
+        }
+        if indexPath.section == 1{
+        //Google Drive
+            if indexPath.row == 1{
+                let storyboard = UIStoryboard(name: "GDrive", bundle: nil)
+                if let GDriveVC = storyboard.instantiateViewController(withIdentifier: "GDrive") as? GDriveViewController{
+                    self.show(GDriveVC, sender: self)
                 }
             }
         }
@@ -134,7 +145,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             logOutBtn.isHidden = false
         //Get service authorizer.
             self.service.authorizer = user.authentication.fetcherAuthorizer()
-            listMajors()
+//            listMajors()
         }
     }
     
@@ -155,13 +166,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //Query the first colume.
             let row = result.values!.first!
             var majorsString = ""
-//            if rows.isEmpty {
-//                self.testLabel.text = "No data found."
-//                return
-//            }
+            if row.isEmpty {
+                self.testLabel.text = "No data found."
+                return
+            }
             for i in 0..<row.count {
-//                let name = row[0]
-//                let major = row[4]
                 majorsString += "\(row[i]), "
             }
             self.testLabel.text = majorsString

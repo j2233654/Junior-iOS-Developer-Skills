@@ -1,6 +1,9 @@
 PODS:
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
+  - GoogleAPIClientForREST/Drive (1.2.1):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Sheets (1.2.1):
     - GoogleAPIClientForREST/Core
     - GTMSessionFetcher (>= 1.1.7)
@@ -29,6 +32,7 @@ PODS:
   - SDWebImage/Core (4.3.3)
 
 DEPENDENCIES:
+  - GoogleAPIClientForREST/Drive (~> 1.2.1)
   - GoogleAPIClientForREST/Sheets (~> 1.2.1)
   - GoogleSignIn (~> 4.1.1)
   - SDWebImage
@@ -50,6 +54,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
 
-PODFILE CHECKSUM: a90366a18f1f9e20fba49382e12c1b4366332d18
+PODFILE CHECKSUM: d86321100cdf7c417c183d2bab077af8a7ab9f6e
 
 COCOAPODS: 1.5.2
