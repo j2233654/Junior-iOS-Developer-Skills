@@ -18,6 +18,8 @@
 		F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F146ECAD2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld */; };
 		F146ECB12085D133002A7EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F146ECB02085D133002A7EAC /* Assets.xcassets */; };
 		F146ECB42085D133002A7EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F146ECB22085D133002A7EAC /* LaunchScreen.storyboard */; };
+		F15AFB8720ABD5BC0057342F /* GDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15AFB8620ABD5BC0057342F /* GDriveViewController.swift */; };
+		F15AFB8920ABD5D30057342F /* GDrive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15AFB8820ABD5D30057342F /* GDrive.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		F146ECB02085D133002A7EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F146ECB32085D133002A7EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F146ECB52085D133002A7EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F15AFB8620ABD5BC0057342F /* GDriveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDriveViewController.swift; sourceTree = "<group>"; };
+		F15AFB8820ABD5D30057342F /* GDrive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GDrive.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			children = (
 				F146ECAA2085D133002A7EAC /* Main.storyboard */,
 				F11218FB208740F800A2F18E /* PushNotification.storyboard */,
+				F15AFB8820ABD5D30057342F /* GDrive.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 				F11218F120860E8C00A2F18E /* ListViewController.swift */,
 				F11218F52086252700A2F18E /* QRCode Scanner */,
 				F11218F820873ED700A2F18E /* Push Notification */,
+				F15AFB8520ABD57B0057342F /* Google Drive and Sheets */,
 				F11218FD2087437900A2F18E /* StoryBoard */,
 				F146ECB02085D133002A7EAC /* Assets.xcassets */,
 				F146ECB22085D133002A7EAC /* LaunchScreen.storyboard */,
@@ -125,6 +131,14 @@
 				F146ECAD2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld */,
 			);
 			path = JrDeveloperSkills;
+			sourceTree = "<group>";
+		};
+		F15AFB8520ABD57B0057342F /* Google Drive and Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				F15AFB8620ABD5BC0057342F /* GDriveViewController.swift */,
+			);
+			path = "Google Drive and Sheets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +211,7 @@
 				F11218FC208740F800A2F18E /* PushNotification.storyboard in Resources */,
 				F146ECB12085D133002A7EAC /* Assets.xcassets in Resources */,
 				F146ECAC2085D133002A7EAC /* Main.storyboard in Resources */,
+				F15AFB8920ABD5D30057342F /* GDrive.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */,
+				F15AFB8720ABD5BC0057342F /* GDriveViewController.swift in Sources */,
 				F11218FA20873F0900A2F18E /* NotifyViewController.swift in Sources */,
 				F146ECA72085D133002A7EAC /* AppDelegate.swift in Sources */,
 				F11218F42086154C00A2F18E /* QRCodeViewController.swift in Sources */,
