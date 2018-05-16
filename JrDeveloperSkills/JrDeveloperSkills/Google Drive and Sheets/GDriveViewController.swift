@@ -13,6 +13,7 @@ import GoogleAPIClientForREST
 class GDriveViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var actIndicator: UIActivityIndicatorView!
     
     private let drive = GTLRDriveService()
     var objects = [GTLRDrive_File]()
@@ -44,9 +45,14 @@ class GDriveViewController: UIViewController, UITableViewDataSource {
     
     
     func downloadFileList(){
-        // Download File List.
+        tableView.isHidden = true
+        actIndicator.startAnimating()
+    // Download File List.
         drive.shouldFetchNextPages = true
         let query = GTLRDriveQuery_FilesList.query()
+    //Set filter condition.
+        query.q = "mimeType = 'application/vnd.google-apps.spreadsheet' "
+    //Start query.
         drive.executeQuery(query) { (ticket, result, error) in
             if let error = error{
                 print("Download File List Error: \(error)")
@@ -56,9 +62,11 @@ class GDriveViewController: UIViewController, UITableViewDataSource {
                 assertionFailure("Invalid result of File List.")
                 return
             }
-            let sheetFiles = files.filter({$0.mimeType == "application/vnd.google-apps.spreadsheet" })
-            self.objects = sheetFiles
+//            let sheetFiles = files.filter({$0.mimeType == "application/vnd.google-apps.spreadsheet" })
+            self.objects = files
             self.tableView.reloadData() //GDrive此方法在main thread，故可直接更新UI
+            self.tableView.isHidden = false
+            self.actIndicator.stopAnimating()
         }
     }
     
@@ -84,7 +92,6 @@ class GDriveViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         let file = objects[indexPath.row]
         cell.textLabel!.text = file.name
         return cell

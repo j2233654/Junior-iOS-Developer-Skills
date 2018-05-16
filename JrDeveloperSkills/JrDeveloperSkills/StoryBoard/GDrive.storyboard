@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-ef-Keg">
+                                <rect key="frame" x="177.5" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-XT-ka4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,12 +49,15 @@
                         <constraints>
                             <constraint firstItem="JEa-XT-ka4" firstAttribute="leading" secondItem="3Jz-h2-EqL" secondAttribute="leading" id="Qxq-4q-A6w"/>
                             <constraint firstItem="3Jz-h2-EqL" firstAttribute="bottom" secondItem="JEa-XT-ka4" secondAttribute="bottom" id="TPm-1w-fir"/>
+                            <constraint firstItem="NDt-ef-Keg" firstAttribute="centerY" secondItem="5DM-iO-eg3" secondAttribute="centerY" id="ZcR-By-LJg"/>
+                            <constraint firstItem="NDt-ef-Keg" firstAttribute="centerX" secondItem="5DM-iO-eg3" secondAttribute="centerX" id="pVO-2P-Zqj"/>
                             <constraint firstItem="3Jz-h2-EqL" firstAttribute="trailing" secondItem="JEa-XT-ka4" secondAttribute="trailing" id="tlr-HX-uqR"/>
                             <constraint firstItem="JEa-XT-ka4" firstAttribute="top" secondItem="3Jz-h2-EqL" secondAttribute="top" id="vkY-RJ-GGB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Jz-h2-EqL"/>
                     </view>
                     <connections>
+                        <outlet property="actIndicator" destination="NDt-ef-Keg" id="YhV-OG-D8D"/>
                         <outlet property="tableView" destination="JEa-XT-ka4" id="hJY-ev-UBJ"/>
                     </connections>
                 </viewController>
