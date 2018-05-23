@@ -27,6 +27,7 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         }
         //Ask user's permission to updating location.
         locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
         locationManager.delegate = self
     }
     
@@ -34,9 +35,11 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         if sender.isOn{
             switchLabel.text = "Turn off tracking."
             trackCount = 0
+            locationManager.startUpdatingLocation()
             locationManager.startUpdatingHeading()
         }else{
             locationManager.stopUpdatingHeading()
+            locationManager.stopUpdatingLocation()
             locationLabel.text = "Tracking had been stopped."
             switchLabel.text = "Turn on to track heading."
         }
@@ -52,7 +55,28 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
         trackCount += 1
         let x = newHeading.x
         let y = newHeading.y
-        locationLabel.text = "headX: \(x), headY: \(y)    Times = \(trackCount)"
+        let message = "headX: \(x), headY: \(y)    Times = \(trackCount)"
+        locationLabel.text = message
+        showNotifyToUser(message)
+    }
+    
+    func showNotifyToUser(_ message:String){
+        guard UIApplication.shared.applicationState != .active else{
+            print("App is not in background")
+            return
+        }
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "CLHeading Change !"
+        content.body = message
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "Alert", content: content, trigger: trigger)
+        
+        center.add(request) { (error) in
+            print("Request Done.")
+        }
     }
 
     /*
