@@ -7,13 +7,39 @@
 //
 
 import UIKit
+import CoreLocation
+import UserNotifications
 
-class LocalViewController: UIViewController {
+class LocalViewController: UIViewController, CLLocationManagerDelegate {
+    
+    @IBOutlet weak var switchLabel : UILabel!
+    @IBOutlet weak var locationLabel : UILabel!
+    var trackCount = 0
+    
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //Ask user's permission to show notification.
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert,.badge,.sound]) { (grant, error) in
+            print("User grant the permission: " + (grant ? "OK" : "NG"))
+        }
+        //Ask user's permission to updating location.
+        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+    }
+    
+    @IBAction func trackingSwitchPressed(sender:UISwitch){
+        if sender.isOn{
+            switchLabel.text = "Turn off tracking."
+            trackCount = 0
+            locationManager.startUpdatingHeading()
+        }else{
+            locationManager.stopUpdatingHeading()
+            locationLabel.text = "Tracking had been stopped."
+            switchLabel.text = "Turn on to track heading."
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +47,13 @@ class LocalViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //CLLocationManagerDelegate
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        trackCount += 1
+        let x = newHeading.x
+        let y = newHeading.y
+        locationLabel.text = "headX: \(x), headY: \(y)    Times = \(trackCount)"
+    }
 
     /*
     // MARK: - Navigation

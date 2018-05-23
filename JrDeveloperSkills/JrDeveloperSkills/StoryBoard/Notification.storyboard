@@ -33,10 +33,50 @@
                     <view key="view" contentMode="scaleToFill" id="G16-q6-tEt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-OD-CAR">
+                                <rect key="frame" x="48.5" y="70" width="278.5" height="31"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J1A-kV-d5G">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="trackingSwitchPressedWithSender:" destination="hhu-Br-IV8" eventType="touchUpInside" id="Hj9-x8-mlR"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on to tracking heading. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uf-9l-H1c">
+                                        <rect key="frame" x="59" y="0.0" width="219.5" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haven't start yet!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VxU-8U-Vma">
+                                <rect key="frame" x="0.0" y="284" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="E7S-YD-Hny"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XB6-ex-Dm4" firstAttribute="trailing" secondItem="VxU-8U-Vma" secondAttribute="trailing" id="6RH-uA-Tam"/>
+                            <constraint firstItem="VxU-8U-Vma" firstAttribute="centerY" secondItem="G16-q6-tEt" secondAttribute="centerY" id="Akv-bF-5wb"/>
+                            <constraint firstItem="VxU-8U-Vma" firstAttribute="centerX" secondItem="G16-q6-tEt" secondAttribute="centerX" id="Bur-TY-bp0"/>
+                            <constraint firstItem="vA7-OD-CAR" firstAttribute="top" secondItem="XB6-ex-Dm4" secondAttribute="top" constant="50" id="Na4-vu-yLK"/>
+                            <constraint firstItem="VxU-8U-Vma" firstAttribute="leading" secondItem="XB6-ex-Dm4" secondAttribute="leading" id="ToH-yU-U5g"/>
+                            <constraint firstItem="vA7-OD-CAR" firstAttribute="centerX" secondItem="G16-q6-tEt" secondAttribute="centerX" id="rxK-FY-UPg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XB6-ex-Dm4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Local" id="9gR-xf-VCf"/>
+                    <connections>
+                        <outlet property="locationLabel" destination="VxU-8U-Vma" id="dRX-sp-Zmm"/>
+                        <outlet property="switchLabel" destination="3Uf-9l-H1c" id="1wD-qf-EdY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Av3-ed-wJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
