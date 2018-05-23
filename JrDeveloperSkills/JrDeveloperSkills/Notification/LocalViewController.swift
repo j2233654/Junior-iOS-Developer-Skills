@@ -1,15 +1,14 @@
 //
-//  NotifyViewController.swift
+//  LocalViewController.swift
 //  JrDeveloperSkills
 //
-//  Created by 鍾哲允 on 2018/4/18.
+//  Created by 鍾哲允 on 2018/5/23.
 //  Copyright © 2018年 Jimmy. All rights reserved.
 //
 
 import UIKit
-import UserNotifications
 
-class NotifyViewController: UIViewController {
+class LocalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

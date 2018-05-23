@@ -14,7 +14,7 @@ import UIKit
 class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, GIDSignInUIDelegate, GIDSignInDelegate{
     
     let sectionTitles = ["Local Functions", "External Functions"]
-    let rowTitles = [ ["QRCode / BarCode Scanner","Multilingual","Push Notification","BLE", "AV Foundation"],
+    let rowTitles = [ ["QRCode / BarCode Scanner","Multilingual","Notification","BLE", "AV Foundation"],
                             ["Parse JSON/XML", "Google Drive", "Google Sheet"] ]
 
     private let scopes = [kGTLRAuthScopeSheetsSpreadsheetsReadonly, kGTLRAuthScopeDriveReadonly]
@@ -111,8 +111,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         //Push Notification.
             if indexPath.row == 2{
-                let storyboard = UIStoryboard(name: "PushNotification", bundle: nil)
-                if let notifyVC = storyboard.instantiateViewController(withIdentifier: "notify") as? NotifyViewController{
+                let storyboard = UIStoryboard(name: "Notification", bundle: nil)
+                if let notifyVC = storyboard.instantiateViewController(withIdentifier: "notify") as? UITabBarController{
                     self.show(notifyVC, sender: self)
                 }
             }
