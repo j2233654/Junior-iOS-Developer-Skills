@@ -17,7 +17,24 @@
                     <view key="view" contentMode="scaleToFill" id="ku1-W1-oOA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBM-Jp-ope">
+                                <rect key="frame" x="0.0" y="184" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="wR8-lK-xZc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kBM-Jp-ope" firstAttribute="centerX" secondItem="ku1-W1-oOA" secondAttribute="centerX" id="EQD-Xy-gtZ"/>
+                            <constraint firstItem="kBM-Jp-ope" firstAttribute="leading" secondItem="a6T-oG-tvz" secondAttribute="leading" id="HWI-dg-wmn"/>
+                            <constraint firstItem="kBM-Jp-ope" firstAttribute="centerY" secondItem="ku1-W1-oOA" secondAttribute="centerY" id="fso-xt-iJH"/>
+                            <constraint firstItem="a6T-oG-tvz" firstAttribute="trailing" secondItem="kBM-Jp-ope" secondAttribute="trailing" id="nDh-oU-HvI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="a6T-oG-tvz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Remote" id="IFu-sM-k6H"/>

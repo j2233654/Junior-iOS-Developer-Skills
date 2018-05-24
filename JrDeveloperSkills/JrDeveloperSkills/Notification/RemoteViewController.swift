@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import FirebaseMessaging
 
-class RemoteViewController: UIViewController {
+class RemoteViewController: UIViewController, MessagingDelegate {
+    
+    @IBOutlet weak var messageLabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Messaging.messaging().delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func application(received remoteMessage: MessagingRemoteMessage) {
+        print(remoteMessage.appData)
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,6 +9,9 @@
 import GoogleSignIn
 import UIKit
 import CoreData
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var imageURL : URL?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //Google SignIn.
         GIDSignIn.sharedInstance().clientID = "208521262662-bjd71avj7f71gs4agtk1r36615ntg36r.apps.googleusercontent.com"
+        //Remote Notification
+        application.registerForRemoteNotifications()
+        FirebaseApp.configure()
         return true
     }
     
@@ -57,6 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    //MARK: - Remote Notification
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
     }
 
     // MARK: - Core Data stack
