@@ -13,7 +13,7 @@
         <!--Remote-->
         <scene sceneID="vhO-bM-14Y">
             <objects>
-                <viewController id="HWs-H3-yji" sceneMemberID="viewController">
+                <viewController id="HWs-H3-yji" customClass="RemoteViewController" customModule="JrDeveloperSkills" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ku1-W1-oOA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,9 @@
                         <viewLayoutGuide key="safeArea" id="a6T-oG-tvz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Remote" id="IFu-sM-k6H"/>
+                    <connections>
+                        <outlet property="messageLabel" destination="kBM-Jp-ope" id="Qvj-2Q-NP0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sig-lQ-f8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

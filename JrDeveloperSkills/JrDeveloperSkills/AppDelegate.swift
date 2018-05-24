@@ -17,8 +17,7 @@ import FirebaseMessaging
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static var userName : String?
-    static var imageURL : URL?
+    static var notifyCount = 0
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //Google SignIn.
@@ -68,6 +67,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Remote Notification
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        AppDelegate.notifyCount += 1
     }
 
     // MARK: - Core Data stack

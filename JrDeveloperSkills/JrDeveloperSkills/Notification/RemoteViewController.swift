@@ -16,7 +16,20 @@ class RemoteViewController: UIViewController, MessagingDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         Messaging.messaging().delegate = self
-        // Do any additional setup after loading the view.
+        messageLabel.text = "Notification Counts : \(AppDelegate.notifyCount)"
+        //Renew UI while back to app.
+        NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive , object: nil, queue: .main) { [weak self] _ in
+            if let weakSelf = self{
+                weakSelf.messageLabel.text = "Notification Counts : \(AppDelegate.notifyCount)"
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.isMovingFromParentViewController{
+            NotificationCenter.default.removeObserver(self)
+        }
     }
     
     func application(received remoteMessage: MessagingRemoteMessage) {
