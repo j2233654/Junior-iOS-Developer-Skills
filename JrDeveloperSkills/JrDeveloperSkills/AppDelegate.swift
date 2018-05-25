@@ -9,12 +9,13 @@
 import GoogleSignIn
 import UIKit
 import CoreData
+import UserNotifications
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
     var window: UIWindow?
     static var notifyCount = 0
@@ -22,9 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //Google SignIn.
         GIDSignIn.sharedInstance().clientID = "208521262662-bjd71avj7f71gs4agtk1r36615ntg36r.apps.googleusercontent.com"
+        //Ask user's permission to show notification.
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert,.badge,.sound]) { (grant, error) in
+            print("User grant the permission: " + (grant ? "OK" : "NG"))
+        }
         //Remote Notification
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
+        Messaging.messaging().delegate = self
         return true
     }
     
@@ -69,8 +76,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         AppDelegate.notifyCount += 1
+    }
+    
+    func application(received remoteMessage: MessagingRemoteMessage) {
+        print(remoteMessage.appData)
     }
 
     // MARK: - Core Data stack

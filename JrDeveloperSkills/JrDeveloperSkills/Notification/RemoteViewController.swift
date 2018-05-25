@@ -7,20 +7,18 @@
 //
 
 import UIKit
-import FirebaseMessaging
 
-class RemoteViewController: UIViewController, MessagingDelegate {
+class RemoteViewController: UIViewController {
     
     @IBOutlet weak var messageLabel : UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Messaging.messaging().delegate = self
-        messageLabel.text = "Notification Counts : \(AppDelegate.notifyCount)"
+        messageLabel.text = "Number of Firebase Messages : \(AppDelegate.notifyCount)"
         //Renew UI while back to app.
         NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidBecomeActive , object: nil, queue: .main) { [weak self] _ in
             if let weakSelf = self{
-                weakSelf.messageLabel.text = "Notification Counts : \(AppDelegate.notifyCount)"
+                weakSelf.messageLabel.text = "Number of Firebase Messages : \(AppDelegate.notifyCount)"
             }
         }
     }
@@ -30,10 +28,6 @@ class RemoteViewController: UIViewController, MessagingDelegate {
         if self.isMovingFromParentViewController{
             NotificationCenter.default.removeObserver(self)
         }
-    }
-    
-    func application(received remoteMessage: MessagingRemoteMessage) {
-        print(remoteMessage.appData)
     }
 
     override func didReceiveMemoryWarning() {

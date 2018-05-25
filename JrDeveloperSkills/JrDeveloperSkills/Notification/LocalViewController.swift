@@ -20,11 +20,6 @@ class LocalViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Ask user's permission to show notification.
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert,.badge,.sound]) { (grant, error) in
-            print("User grant the permission: " + (grant ? "OK" : "NG"))
-        }
         //Ask user's permission to updating location.
         locationManager.requestAlwaysAuthorization()
         locationManager.allowsBackgroundLocationUpdates = true

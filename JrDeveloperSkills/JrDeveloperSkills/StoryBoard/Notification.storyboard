@@ -27,11 +27,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remote Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0v-SD-Lh6">
+                                <rect key="frame" x="89.5" y="50" width="196" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kBM-Jp-ope" firstAttribute="centerX" secondItem="ku1-W1-oOA" secondAttribute="centerX" id="EQD-Xy-gtZ"/>
                             <constraint firstItem="kBM-Jp-ope" firstAttribute="leading" secondItem="a6T-oG-tvz" secondAttribute="leading" id="HWI-dg-wmn"/>
+                            <constraint firstItem="d0v-SD-Lh6" firstAttribute="centerX" secondItem="ku1-W1-oOA" secondAttribute="centerX" id="IpP-iC-i62"/>
+                            <constraint firstItem="d0v-SD-Lh6" firstAttribute="top" secondItem="a6T-oG-tvz" secondAttribute="top" constant="30" id="Vdj-or-pHa"/>
                             <constraint firstItem="kBM-Jp-ope" firstAttribute="centerY" secondItem="ku1-W1-oOA" secondAttribute="centerY" id="fso-xt-iJH"/>
                             <constraint firstItem="a6T-oG-tvz" firstAttribute="trailing" secondItem="kBM-Jp-ope" secondAttribute="trailing" id="nDh-oU-HvI"/>
                         </constraints>
@@ -55,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vA7-OD-CAR">
-                                <rect key="frame" x="48.5" y="70" width="278.5" height="31"/>
+                                <rect key="frame" x="48.5" y="120" width="278.5" height="31"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J1A-kV-d5G">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -80,13 +88,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oq-mu-U87">
+                                <rect key="frame" x="101.5" y="50" width="173" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="2Oq-mu-U87" firstAttribute="top" secondItem="XB6-ex-Dm4" secondAttribute="top" constant="30" id="0tu-si-ceo"/>
                             <constraint firstItem="XB6-ex-Dm4" firstAttribute="trailing" secondItem="VxU-8U-Vma" secondAttribute="trailing" id="6RH-uA-Tam"/>
+                            <constraint firstItem="2Oq-mu-U87" firstAttribute="centerX" secondItem="G16-q6-tEt" secondAttribute="centerX" id="8E5-bZ-VNV"/>
                             <constraint firstItem="VxU-8U-Vma" firstAttribute="centerY" secondItem="G16-q6-tEt" secondAttribute="centerY" id="Akv-bF-5wb"/>
                             <constraint firstItem="VxU-8U-Vma" firstAttribute="centerX" secondItem="G16-q6-tEt" secondAttribute="centerX" id="Bur-TY-bp0"/>
-                            <constraint firstItem="vA7-OD-CAR" firstAttribute="top" secondItem="XB6-ex-Dm4" secondAttribute="top" constant="50" id="Na4-vu-yLK"/>
+                            <constraint firstItem="vA7-OD-CAR" firstAttribute="top" secondItem="XB6-ex-Dm4" secondAttribute="top" constant="100" id="Na4-vu-yLK"/>
                             <constraint firstItem="VxU-8U-Vma" firstAttribute="leading" secondItem="XB6-ex-Dm4" secondAttribute="leading" id="ToH-yU-U5g"/>
                             <constraint firstItem="vA7-OD-CAR" firstAttribute="centerX" secondItem="G16-q6-tEt" secondAttribute="centerX" id="rxK-FY-UPg"/>
                         </constraints>
