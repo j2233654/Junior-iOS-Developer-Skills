@@ -11,13 +11,17 @@
 		F11218F220860E8C00A2F18E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F120860E8C00A2F18E /* ListViewController.swift */; };
 		F11218F42086154C00A2F18E /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F32086154C00A2F18E /* QRCodeViewController.swift */; };
 		F11218F72086255100A2F18E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F62086255100A2F18E /* WebViewController.swift */; };
-		F11218FA20873F0900A2F18E /* NotifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11218F920873F0900A2F18E /* NotifyViewController.swift */; };
-		F11218FC208740F800A2F18E /* PushNotification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11218FB208740F800A2F18E /* PushNotification.storyboard */; };
 		F146ECA72085D133002A7EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146ECA62085D133002A7EAC /* AppDelegate.swift */; };
 		F146ECAC2085D133002A7EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F146ECAA2085D133002A7EAC /* Main.storyboard */; };
 		F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F146ECAD2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld */; };
 		F146ECB12085D133002A7EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F146ECB02085D133002A7EAC /* Assets.xcassets */; };
 		F146ECB42085D133002A7EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F146ECB22085D133002A7EAC /* LaunchScreen.storyboard */; };
+		F15AFB8720ABD5BC0057342F /* GDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15AFB8620ABD5BC0057342F /* GDriveViewController.swift */; };
+		F15AFB8920ABD5D30057342F /* GDrive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F15AFB8820ABD5D30057342F /* GDrive.storyboard */; };
+		F165893920B6AC3C00420C6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F165893820B6AC3C00420C6B /* GoogleService-Info.plist */; };
+		F1ADAAC420B550A5000E18FA /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ADAAC320B550A5000E18FA /* LocalViewController.swift */; };
+		F1ADAAC620B550B1000E18FA /* RemoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ADAAC520B550B1000E18FA /* RemoteViewController.swift */; };
+		F1ADAAC820B5517A000E18FA /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1ADAAC720B5517A000E18FA /* Notification.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +31,6 @@
 		F11218F120860E8C00A2F18E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		F11218F32086154C00A2F18E /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		F11218F62086255100A2F18E /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		F11218F920873F0900A2F18E /* NotifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyViewController.swift; sourceTree = "<group>"; };
-		F11218FB208740F800A2F18E /* PushNotification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PushNotification.storyboard; sourceTree = "<group>"; };
 		F146ECA32085D133002A7EAC /* JrDeveloperSkills.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JrDeveloperSkills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F146ECA62085D133002A7EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F146ECAB2085D133002A7EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,13 @@
 		F146ECB02085D133002A7EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F146ECB32085D133002A7EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F146ECB52085D133002A7EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F15AFB8620ABD5BC0057342F /* GDriveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDriveViewController.swift; sourceTree = "<group>"; };
+		F15AFB8820ABD5D30057342F /* GDrive.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GDrive.storyboard; sourceTree = "<group>"; };
+		F165893720B6612B00420C6B /* JrDeveloperSkills.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JrDeveloperSkills.entitlements; sourceTree = "<group>"; };
+		F165893820B6AC3C00420C6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1ADAAC320B550A5000E18FA /* LocalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
+		F1ADAAC520B550B1000E18FA /* RemoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteViewController.swift; sourceTree = "<group>"; };
+		F1ADAAC720B5517A000E18FA /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,19 +85,21 @@
 			path = "QRCode Scanner";
 			sourceTree = "<group>";
 		};
-		F11218F820873ED700A2F18E /* Push Notification */ = {
+		F11218F820873ED700A2F18E /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				F11218F920873F0900A2F18E /* NotifyViewController.swift */,
+				F1ADAAC320B550A5000E18FA /* LocalViewController.swift */,
+				F1ADAAC520B550B1000E18FA /* RemoteViewController.swift */,
 			);
-			path = "Push Notification";
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		F11218FD2087437900A2F18E /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
 				F146ECAA2085D133002A7EAC /* Main.storyboard */,
-				F11218FB208740F800A2F18E /* PushNotification.storyboard */,
+				F1ADAAC720B5517A000E18FA /* Notification.storyboard */,
+				F15AFB8820ABD5D30057342F /* GDrive.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -114,17 +125,28 @@
 		F146ECA52085D133002A7EAC /* JrDeveloperSkills */ = {
 			isa = PBXGroup;
 			children = (
+				F165893720B6612B00420C6B /* JrDeveloperSkills.entitlements */,
 				F146ECA62085D133002A7EAC /* AppDelegate.swift */,
 				F11218F120860E8C00A2F18E /* ListViewController.swift */,
 				F11218F52086252700A2F18E /* QRCode Scanner */,
-				F11218F820873ED700A2F18E /* Push Notification */,
+				F11218F820873ED700A2F18E /* Notification */,
+				F15AFB8520ABD57B0057342F /* Google Drive and Sheets */,
 				F11218FD2087437900A2F18E /* StoryBoard */,
 				F146ECB02085D133002A7EAC /* Assets.xcassets */,
 				F146ECB22085D133002A7EAC /* LaunchScreen.storyboard */,
 				F146ECB52085D133002A7EAC /* Info.plist */,
+				F165893820B6AC3C00420C6B /* GoogleService-Info.plist */,
 				F146ECAD2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld */,
 			);
 			path = JrDeveloperSkills;
+			sourceTree = "<group>";
+		};
+		F15AFB8520ABD57B0057342F /* Google Drive and Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				F15AFB8620ABD5BC0057342F /* GDriveViewController.swift */,
+			);
+			path = "Google Drive and Sheets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,7 +186,10 @@
 						CreatedOnToolsVersion = 9.3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -194,9 +219,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F146ECB42085D133002A7EAC /* LaunchScreen.storyboard in Resources */,
-				F11218FC208740F800A2F18E /* PushNotification.storyboard in Resources */,
 				F146ECB12085D133002A7EAC /* Assets.xcassets in Resources */,
 				F146ECAC2085D133002A7EAC /* Main.storyboard in Resources */,
+				F15AFB8920ABD5D30057342F /* GDrive.storyboard in Resources */,
+				F1ADAAC820B5517A000E18FA /* Notification.storyboard in Resources */,
+				F165893920B6AC3C00420C6B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +277,9 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -258,7 +287,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -272,10 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1ADAAC620B550B1000E18FA /* RemoteViewController.swift in Sources */,
 				F146ECAF2085D133002A7EAC /* JrDeveloperSkills.xcdatamodeld in Sources */,
-				F11218FA20873F0900A2F18E /* NotifyViewController.swift in Sources */,
+				F15AFB8720ABD5BC0057342F /* GDriveViewController.swift in Sources */,
 				F146ECA72085D133002A7EAC /* AppDelegate.swift in Sources */,
 				F11218F42086154C00A2F18E /* QRCodeViewController.swift in Sources */,
+				F1ADAAC420B550A5000E18FA /* LocalViewController.swift in Sources */,
 				F11218F72086255100A2F18E /* WebViewController.swift in Sources */,
 				F11218F220860E8C00A2F18E /* ListViewController.swift in Sources */,
 			);
@@ -422,6 +455,7 @@
 			baseConfigurationReference = 9A5450969ED9BA5B7041C9F6 /* Pods-JrDeveloperSkills.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JrDeveloperSkills/JrDeveloperSkills.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z42VQT8C93;
 				INFOPLIST_FILE = JrDeveloperSkills/Info.plist;
@@ -442,6 +476,7 @@
 			baseConfigurationReference = 69661763FB8E528F848F33B7 /* Pods-JrDeveloperSkills.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JrDeveloperSkills/JrDeveloperSkills.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z42VQT8C93;
 				INFOPLIST_FILE = JrDeveloperSkills/Info.plist;
